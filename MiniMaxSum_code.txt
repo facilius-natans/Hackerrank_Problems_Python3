@@ -1,0 +1,26 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the miniMaxSum function below.
+def miniMaxSum(arr):
+    my_min = 10 ** 9
+    my_max = 1
+    my_sum = 0
+    for i in range(0, len(arr)):
+        if arr[i] < my_min:
+            my_min = arr[i]
+        if arr[i] > my_max:
+            my_max = arr[i]
+        my_sum += arr[i]
+    print((my_sum - my_max), (my_sum - my_min))
+          
+
+if __name__ == '__main__':
+    arr = list(map(int, input().rstrip().split()))
+
+    miniMaxSum(arr)

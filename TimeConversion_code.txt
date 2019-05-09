@@ -1,0 +1,31 @@
+#!/bin/python3
+
+import os
+import sys
+
+#
+# Complete the timeConversion function below.
+#
+def timeConversion(s):
+    AMorPM = s[-2:]
+    hours = int(s[:2])
+    rest = s[2:-2]
+
+    if (hours > 11):
+        hours = 0
+
+    if (AMorPM == "PM"):
+        hours += 12
+
+    return ("%02d%s" % (hours, rest))
+
+if __name__ == '__main__':
+    f = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    result = timeConversion(s)
+
+    f.write(result + '\n')
+
+    f.close()
